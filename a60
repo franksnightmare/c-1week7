@@ -1,1 +1,5 @@
-In the example of slide 30, 'default' wasn't specified for the copy constructor because it would defeat the purpose of explicitly defining it, which is to prevent wild pointers. In that case, the trivial copy constructor would be used and  
+In the example of slide 30, 'default' wasn't specified for the copy constructor because it would defeat the purpose of explicitly defining it, which is to prevent wild pointers. In that case, the trivial copy constructor would be used, copying struct- or class- objects member-wise and, considering that the class allocates memmory for its own use, resulting in wild pointers.
+
+One case where specifying default for a copy constructor could make sense would be for a class that simultaneouly:
+1. does NOT have pointer data members pointing at its own data and
+2. have had its copy constructor suppressed by declarations of either the move constructor or the move assignment operator.
