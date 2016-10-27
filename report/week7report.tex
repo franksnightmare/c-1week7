@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage{a4wide,times}
+\usepackage{times}
 \usepackage[english]{babel}
 
 % -----------------------------------------------
@@ -102,8 +102,17 @@ One case where specifying default for a copy constructor could make sense would 
 Another would be to default the copy constructor in the header file as a form of documentation, to make it clear for the users.
 
 \section*{Assignment 61, copy elision}
-Here we show some situations where copy elision is and isn't used.
-
+Here we show some situations where copy elision is and isn't used. First we are asked to define a class Demo:
+\lstinputlisting[caption = Demo.h]{src/a61/Demo.h}
+Also, we are asked to implement a Demo function in which:
+\subsection*{Copy elision is used}
+\lstinputlisting[caption = Copy Elision.cc]{src/a61/copy_elision.cc}
+\subsection*{Move constructor is used}
+\lstinputlisting[caption = Move constructor.cc]{src/a61/move_construct.cc}
+\subsection*{Copy assignment is used}
+\lstinputlisting[caption = Copy assignment.cc]{src/a61/copy_assignment.cc}
+\subsection*{Move assignment is used}
+\lstinputlisting[caption = Move assignment.cc]{src/a61/move_assignment.cc}
 
 
 \section*{Assignment 62}
