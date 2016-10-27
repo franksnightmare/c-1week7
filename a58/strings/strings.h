@@ -11,7 +11,7 @@ class Strings
 	size_t d_capacity = 1;
 	
 	public:
-		Strings();
+		Strings() = default;
 		Strings(size_t argc, char **argv);
 		Strings(char **environ);
 		Strings(Strings const &other);
