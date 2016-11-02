@@ -1,0 +1,8 @@
+Relevant files:
+
+strings.h
+copyconstr.cc
+moveconstr.cc
+operator=.cc
+strings0.cc
+swap.cc

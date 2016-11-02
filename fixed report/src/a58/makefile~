@@ -1,0 +1,10 @@
+STRINGS = strings1.o strings2.o addstring1.o addstring2.o size.o str.o capacity.o setsize.o setstr.o at1.o at2.o resize.o reserve.o calccapacity.o destructor.o
+
+#memory/memory.ih.gch: memory/memory.ih
+#	g++ -std=c++11 -x c++-header $<
+
+%.o: strings/%.cc strings/strings.h
+	g++ -std=c++11 -Wall -c -o $@ $<
+
+main: main.cc $(STRINGS) main.h
+	g++ -std=c++11 -Wall -g -o main main.cc $(STRINGS) main.h

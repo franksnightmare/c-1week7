@@ -1,0 +1,21 @@
+void Class::swap(Class &other)
+{
+	char buffer[sizeof(Class)];
+	memcpy(buffer,  this,   sizeof(Class)); //Operation 1
+	memcpy(this,   &other, sizeof(Class));  //Operation 2
+	memcpy(&other, buffer,  sizeof(Class)); //Operation 3	
+}
+
+Before the fast swap is done, an object A has a pointer data member *A to itself and an object B has a pointer data member *B to itself.
+Pointers are variables that hold a memory address (in this case its current object).
+The pointers keep pointing to the memory address they were defined for.
+After operation 1, the pointer *A is moved to the buffer, but still points to its previous current object A.
+After operation 2, the pointer *B is moved to object A, but still points to its previous current object B.
+After operation 3, the pointer *A is moved to object B, and is still pointing to object A.
+This results in a situation where the objects have swapped data members, however they now point to each other.
+So the self-pointing property of the class is gone.
+
+Using the keyword 'this' prevents this situation.
+The 'this' keyword is placed in front of the data member and then points to the current object where the data member resides.
+After doing the swapping like above but with the 'this' keyword, the data members of A and B are swapped. They still have the 'this' keyword
+in front of them and now it still a self-pointing class. 
