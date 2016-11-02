@@ -7,5 +7,5 @@ Demo factory(Demo example)
 
 int main()
 {
-	Demo val = factory(Demo());
+	Demo val = factory(Demo());//Move constructor
 }

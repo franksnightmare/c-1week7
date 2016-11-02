@@ -8,5 +8,5 @@ Demo factory(Demo example)
 int main()
 {
 	Demo val;
-	val = factory(Demo());
+	val = factory(Demo());//Move assignment
 }
