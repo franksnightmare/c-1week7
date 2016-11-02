@@ -10,14 +10,14 @@ Matrix &Matrix::tr()
 		exit(1);
 	}
 	
+	// The elements of each row are swapped with
+	// the elements of the corresponding column
+	// up to the diagonal.
+	// The diagonal remains unchanged. 
 	for (size_t nRow = 0; nRow != d_nRows; ++nRow)
 	{
 		for (size_t nCol = 0; nCol != nRow; ++nCol)
 		{
-			// The diagonal can be ignored.
-			if (nRow == nCol)
-				break;
-			
 			double *targetPtr = row(nRow) + nCol;
 			double *mirrorPtr = row(nCol) + nRow;
 			

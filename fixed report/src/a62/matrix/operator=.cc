@@ -2,7 +2,5 @@
 
 Matrix &Matrix::operator=(Matrix const &other)
 {
-	Matrix copy(other);
-	swap(copy);
-	return *this;
+	return *this = Matrix(other);
 }

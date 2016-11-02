@@ -9,7 +9,7 @@ class Matrix
 	size_t d_nRows = 0;
 	size_t d_nCols = 0;
 	
-	double *d_data = new double[0];
+	double *d_data = 0;
 	
 	public:
 		Matrix() = default;
@@ -25,9 +25,11 @@ class Matrix
 		
 		void swap(Matrix &other);
 		
-		size_t nRows();
-		size_t nCols();
+		size_t const &nRows();
+		size_t const &nCols();
+		
 		double *row(size_t index);
+		double const *row(size_t index) const;
 		
 		Matrix transpose();
 		static Matrix identity(size_t dim);
